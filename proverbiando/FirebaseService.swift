@@ -1,5 +1,5 @@
 //
-//  ProverbService.swift
+//  FirebaseService.swift
 //  proverbiando
 //
 //  Created by Jefferson Machado on 16/12/25.
