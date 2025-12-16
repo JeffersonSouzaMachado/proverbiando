@@ -1,55 +1,51 @@
 import Foundation
 
-func fetchRandomProverb(completion: @escaping (Proverb?) -> Void) {
+final class ApiService{
     
-    let randomChapter = Int.random(in: 1...31)
-    let randomVerse = Int.random(in: 1...33)
-    
-    let urlString =
-    "https://bible-api.com/proverbs+\(randomChapter):\(randomVerse)?translation=almeida"
-    
-    guard let url = URL(string: urlString) else {
-        completion(nil)
-        return
-    }
-    
-    URLSession.shared.dataTask(with: url) { data, response, error in
+    func fetchProverbApi(  chapter: Int,
+                              verse: Int,completion: @escaping (Proverb?) -> Void) {
         
-        if error != nil || data == nil {
+        let urlString =
+        "https://bible-api.com/proverbs+\(chapter):\(verse)?translation=almeida"
+        
+        guard let url = URL(string: urlString) else {
             completion(nil)
             return
         }
         
-        do {
-            let apiResponse = try JSONDecoder().decode(
-                BibleApiResponse.self,
-                from: data!
-            )
+        URLSession.shared.dataTask(with: url) { data, response, error in
             
-            guard let proverb = apiResponse.verses.first else {
+            if error != nil || data == nil {
                 completion(nil)
                 return
             }
             
+            do {
+                let apiResponse = try JSONDecoder().decode(
+                    BibleApiResponse.self,
+                    from: data!
+                )
+                
+                guard let verse = apiResponse.verses.first else {
+                    completion(nil)
+                    return
+                }
+                
+                let proverb = Proverb(
+                    text: verse.text.trimmingCharacters(in: .whitespacesAndNewlines),
+                    chapter: verse.chapter,
+                    verse: verse.verse,
+                    analysis: " ",
+                    application: " ",
+                )
+                
+                completion(proverb)
+                
+            } catch {
+                print("Erro ao decodificar:", error)
+                completion(nil)
+            }
             
-            
-            guard let text = proverb.text else {return completion(nil)}
-            guard let chapter = proverb.chapter else {return completion(nil)}
-            guard let verse = proverb.verse else {return completion(nil)}
-          
-            
-            let proverbComplete = Proverb(
-                text: text.trimmingCharacters(in: .whitespacesAndNewlines),
-                chapter: chapter,
-                verse:verse
-            )
-            
-            completion(proverbComplete)
-            
-        } catch {
-            print("Erro ao decodificar:", error)
-            completion(nil)
-        }
-        
-    }.resume()
+        }.resume()
+    }
 }

@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C4F5DEB92EF175E800F4909F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4F5DEB82EF175E700F4909F /* GoogleService-Info.plist */; };
+		C4F5DEBC2EF1780E00F4909F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = C4F5DEBB2EF1780E00F4909F /* FirebaseCore */; };
+		C4F5DEC22EF17C9E00F4909F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C4F5DEC12EF17C9E00F4909F /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C4803CA42EF0264D0038FA7D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +33,7 @@
 		C4803C8D2EF0264B0038FA7D /* proverbiando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = proverbiando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4803CA32EF0264D0038FA7D /* proverbiandoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = proverbiandoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4803CAD2EF0264D0038FA7D /* proverbiandoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = proverbiandoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4F5DEB82EF175E700F4909F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F5DEBC2EF1780E00F4909F /* FirebaseCore in Frameworks */,
+				C4F5DEC22EF17C9E00F4909F /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +101,8 @@
 				C4803CA62EF0264D0038FA7D /* proverbiandoTests */,
 				C4803CB02EF0264D0038FA7D /* proverbiandoUITests */,
 				C4803C8E2EF0264B0038FA7D /* Products */,
+				C4F5DEB82EF175E700F4909F /* GoogleService-Info.plist */,
+				C4F5DEBA2EF1780E00F4909F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +114,13 @@
 				C4803CAD2EF0264D0038FA7D /* proverbiandoUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C4F5DEBA2EF1780E00F4909F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +143,8 @@
 			);
 			name = proverbiando;
 			packageProductDependencies = (
+				C4F5DEBB2EF1780E00F4909F /* FirebaseCore */,
+				C4F5DEC12EF17C9E00F4909F /* FirebaseFirestore */,
 			);
 			productName = proverbiando;
 			productReference = C4803C8D2EF0264B0038FA7D /* proverbiando.app */;
@@ -208,6 +228,9 @@
 			);
 			mainGroup = C4803C842EF0264B0038FA7D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C4F5DEB72EF1754F00F4909F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C4803C8E2EF0264B0038FA7D /* Products */;
 			projectDirPath = "";
@@ -225,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F5DEB92EF175E800F4909F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +316,7 @@
 				DEVELOPMENT_TEAM = 456HUL2J6C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = proverbiando/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Proverbiando;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -324,6 +349,7 @@
 				DEVELOPMENT_TEAM = 456HUL2J6C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = proverbiando/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Proverbiando;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -591,6 +617,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4F5DEB72EF1754F00F4909F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4F5DEBB2EF1780E00F4909F /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4F5DEB72EF1754F00F4909F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		C4F5DEC12EF17C9E00F4909F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4F5DEB72EF1754F00F4909F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C4803C852EF0264B0038FA7D /* Project object */;
 }

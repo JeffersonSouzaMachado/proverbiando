@@ -79,7 +79,7 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Atualizar Provébio">
+                                <buttonConfiguration key="configuration" style="plain" title="Buscar novo Provébio">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -103,6 +103,7 @@
                     <connections>
                         <outlet property="proverbLabel" destination="OK2-ZU-MpM" id="AGs-nN-rc0"/>
                         <outlet property="referenceLabel" destination="Tv0-eQ-Gqf" id="Uut-AK-3ME"/>
+                        <outlet property="updateProberbButton" destination="JMX-ES-E8k" id="Lyh-e4-j9s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LR-ga-fFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -12,6 +12,8 @@ struct Proverb: Decodable {
     let text: String
     let chapter: Int
     let verse: Int
+    let analysis: String
+    let application: String
 }
 
 
