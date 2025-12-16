@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+
+struct Proverb: Decodable {
+    let text: String
+    let chapter: Int
+    let verse: Int
+}
+
+
+struct BibleApiResponse: Decodable {
+    let verses: [BibleVerseDTO]
+}
+
+struct BibleVerseDTO: Decodable {
+    let chapter: Int
+    let verse: Int
+    let text: String
+}

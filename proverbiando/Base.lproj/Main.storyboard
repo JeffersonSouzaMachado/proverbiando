@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2N8-7Q-gJn">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-3c-yNC">
-                                <rect key="frame" x="50" y="168" width="293" height="200"/>
+                                <rect key="frame" x="50" y="222" width="293" height="200"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-BH-iaX">
-                                <rect key="frame" x="60" y="468" width="273" height="50"/>
+                                <rect key="frame" x="60" y="522" width="273" height="50"/>
                                 <color key="backgroundColor" red="0.8837890625" green="0.5249023438" blue="0.3051757812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7FI-su-02m"/>
@@ -29,6 +29,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Buscar Provébio">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="xGb-rT-nDo" kind="show" id="Iyx-3e-Zza"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -42,10 +45,11 @@
                             <constraint firstItem="aE0-3c-yNC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="pIe-RY-Pnu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ZLF-Zi-McC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="131"/>
+            <point key="canvasLocation" x="1064.885496183206" y="130.98591549295776"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="dnv-3e-fUo">
@@ -54,13 +58,74 @@
                     <view key="view" contentMode="scaleToFill" id="xZn-aI-hCW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confia no Senhor de todo seu coração, e esse é um exemplo de Provérbio." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OK2-ZU-MpM">
+                                <rect key="frame" x="40" y="202" width="313" height="93.333333333333314"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proverbios 1:1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tv0-eQ-Gqf">
+                                <rect key="frame" x="232.33333333333334" y="315.33333333333331" width="120.66666666666666" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMX-ES-E8k">
+                                <rect key="frame" x="40" y="389.33333333333331" width="313" height="50"/>
+                                <color key="backgroundColor" red="0.8837890625" green="0.5249023438" blue="0.3051757812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i9u-iM-YGj"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Atualizar Provébio">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateProverb:" destination="xGb-rT-nDo" eventType="touchUpInside" id="6Hp-P1-hMs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9HJ-Gs-JnW"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JMX-ES-E8k" firstAttribute="leading" secondItem="9HJ-Gs-JnW" secondAttribute="leading" constant="40" id="4PI-Ik-74O"/>
+                            <constraint firstItem="OK2-ZU-MpM" firstAttribute="leading" secondItem="9HJ-Gs-JnW" secondAttribute="leading" constant="40" id="7CI-a2-yya"/>
+                            <constraint firstAttribute="trailing" secondItem="OK2-ZU-MpM" secondAttribute="trailing" constant="40" id="ANf-vl-TlE"/>
+                            <constraint firstItem="Tv0-eQ-Gqf" firstAttribute="top" secondItem="OK2-ZU-MpM" secondAttribute="bottom" constant="20" id="C2t-wI-9dv"/>
+                            <constraint firstItem="9HJ-Gs-JnW" firstAttribute="trailing" secondItem="Tv0-eQ-Gqf" secondAttribute="trailing" constant="40" id="JzW-nS-JjE"/>
+                            <constraint firstItem="OK2-ZU-MpM" firstAttribute="top" secondItem="9HJ-Gs-JnW" secondAttribute="top" constant="30" id="Mth-Ne-FL4"/>
+                            <constraint firstItem="9HJ-Gs-JnW" firstAttribute="trailing" secondItem="JMX-ES-E8k" secondAttribute="trailing" constant="40" id="Nz9-FV-6BR"/>
+                            <constraint firstItem="JMX-ES-E8k" firstAttribute="top" secondItem="Tv0-eQ-Gqf" secondAttribute="bottom" constant="50" id="vd7-rS-lo4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="proverbLabel" destination="OK2-ZU-MpM" id="AGs-nN-rc0"/>
+                        <outlet property="referenceLabel" destination="Tv0-eQ-Gqf" id="Uut-AK-3ME"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LR-ga-fFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="131"/>
+            <point key="canvasLocation" x="1837.4045801526718" y="130.98591549295776"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zvP-7d-Kyy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2N8-7Q-gJn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FQU-mK-8sV">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VX4-DM-h98"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDO-p0-Zxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="131"/>
         </scene>
     </scenes>
     <resources>
